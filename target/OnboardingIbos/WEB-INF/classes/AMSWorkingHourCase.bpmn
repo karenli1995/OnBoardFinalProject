@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="AMSExceptionCaseWorkflow" name="AMSExceptionCaseWorkflow" isExecutable="true">
+    <startEvent id="StartCreateExceptionTaskWorkFlow" name="Start" activiti:initiator="${managerusername}"></startEvent>
+    <endEvent id="endOfFlow" name="End"></endEvent>
+    <serviceTask id="mailtask1" name="Mail Task" activiti:type="mail">
+      <extensionElements>
+        <activiti:field name="to">
+          <activiti:string><![CDATA[abhishekg@incessantechnologies.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="from">
+          <activiti:string><![CDATA[karenl@incessanttechnologies.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="subject">
+          <activiti:string><![CDATA[Test Email]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="cc">
+          <activiti:string><![CDATA[emilyb@incessanttechnologies.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="html">
+          <activiti:string><![CDATA[this is a test email for Ibos]]></activiti:string>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="flow1" sourceRef="StartCreateExceptionTaskWorkFlow" targetRef="mailtask1"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="mailtask1" targetRef="endOfFlow"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_AMSExceptionCaseWorkflow">
+    <bpmndi:BPMNPlane bpmnElement="AMSExceptionCaseWorkflow" id="BPMNPlane_AMSExceptionCaseWorkflow">
+      <bpmndi:BPMNShape bpmnElement="StartCreateExceptionTaskWorkFlow" id="BPMNShape_StartCreateExceptionTaskWorkFlow">
+        <omgdc:Bounds height="35.0" width="35.0" x="60.0" y="114.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endOfFlow" id="BPMNShape_endOfFlow">
+        <omgdc:Bounds height="35.0" width="35.0" x="490.0" y="115.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="mailtask1" id="BPMNShape_mailtask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="240.0" y="110.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="95.0" y="131.0"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="137.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="345.0" y="137.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="132.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
