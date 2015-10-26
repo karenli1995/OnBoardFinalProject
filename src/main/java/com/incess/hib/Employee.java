@@ -17,7 +17,6 @@ public class Employee {
 	private String name;
 	
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String empid;
 	
 	private String dob;

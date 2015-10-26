@@ -53,43 +53,7 @@ public class WorkFlowTaskOperations
 	@Autowired
 	ActivitiLoadUpService newEmployeeAPI;
 
-
-	//	public void getTaskDataFromDB(Connection con, String dbName) throws SQLException
-	//	{
-	//		System.out.println("called getTaskDataFromDB method");
-	//
-	//		dbName = "employee";
-	//		Statement stmt = null;
-	//		String query =
-	//				"select COF_NAME, SUP_ID, PRICE, " +
-	//						"SALES, TOTAL " +
-	//						"from " + dbName + ".COFFEES";
-	//
-	//		try {
-	//			stmt = con.createStatement();
-	//			ResultSet rs = stmt.executeQuery(query);
-	//			while (rs.next()) {
-	//				String coffeeName = rs.getString("COF_NAME");
-	//				int supplierID = rs.getInt("SUP_ID");
-	//				float price = rs.getFloat("PRICE");
-	//				int sales = rs.getInt("SALES");
-	//				int total = rs.getInt("TOTAL");
-	//				System.out.println(coffeeName + "\t" + supplierID +
-	//						"\t" + price + "\t" + sales +
-	//						"\t" + total);
-	//			}
-	//		}catch(SQLException se){
-	//			//Handle errors for JDBC
-	//			se.printStackTrace();
-	//		}catch(Exception e){
-	//			//Handle errors for Class.forName
-	//			e.printStackTrace();
-	//		} finally {
-	//			if (stmt != null) { stmt.close(); }
-	//		}
-	//
-	//	}
-
+	
 	public void createUser(String process_id, String empid, String name, String dob, String experience, boolean logistics, boolean arrange)
 	{
 		if(process_id !=  null)
@@ -109,7 +73,6 @@ public class WorkFlowTaskOperations
 	}
 
 
-	//process variables passed as a parameter can only be of type STRING!
 	public void createITTask(String process_id, String dept, String empid, String empname, String status)
 	{	
 		if(process_id !=  null)

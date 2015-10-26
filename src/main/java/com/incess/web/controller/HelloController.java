@@ -76,7 +76,6 @@ public class HelloController {
 		
 		//WF
 		Map<String, Object> processVariablemap = new HashMap<String, Object>();
-		//processVariablemap.put("employeeInfo", newemp);
 		processVariablemap.put("name", newemp.getName());
 		processVariablemap.put("empname", newemp.getName());
 		processVariablemap.put("empid", newemp.getEmpid());  
@@ -118,10 +117,9 @@ public class HelloController {
 		
 		UserTasks existingTaskInstance = taskDAO.findTask(taskInstance.getEmpid());
 
-		//somehow need to get the correct employee object
 		existingTaskInstance.setProcessId(taskInstance.getProcessId());
 		existingTaskInstance.setDept(taskInstance.getDept());
-		existingTaskInstance.setEmpName(existingTaskInstance.getEmpName());  //interesting... taskInstance will not work
+		existingTaskInstance.setEmpName(existingTaskInstance.getEmpName()); 
 		existingTaskInstance.setEmpid(taskInstance.getEmpid());
 		existingTaskInstance.setStatus("Approved");
 		taskDAO.updateStatus(existingTaskInstance);

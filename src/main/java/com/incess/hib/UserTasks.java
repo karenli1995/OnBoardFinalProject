@@ -12,7 +12,6 @@ import javax.persistence.Table;
 public class UserTasks {
 
 	@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String empid;
 	
 	@Column(name = "taskid")

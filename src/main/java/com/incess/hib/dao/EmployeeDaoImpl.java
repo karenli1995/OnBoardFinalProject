@@ -17,35 +17,14 @@ import com.incess.hib.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 
-	/*@Autowired
-	private SessionFactory sessionFactory;
-	 */
-
 	@PersistenceContext	
 	EntityManager entityManager;
 
-	/* 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-       // this.sessionFactory = sessionFactory;
-    } */
-
 	@Transactional
 	public void save(Employee e) {
-		/*Session session = this.sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-		session.persist(p);
-		tx.commit();
-		session.close();*/
 		entityManager.persist(e);
 
 	}
-
-	//public void delete(Employee s){
-	  //  entityManager.find(Employee.class, "Approved");
-	//	entityManager.remove(s);
-
-	//}
-
 
 	@SuppressWarnings("unchecked")
 	public List<Employee> list() {

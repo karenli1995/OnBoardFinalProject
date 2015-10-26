@@ -54,11 +54,10 @@ public class ActivitiLoadUpService
 	private ProcessInstance processInstance;
 
 	@PersistenceContext
-	//@Qualifier(value = "entityManagerFactory")
 	private EntityManager entityManager;
 
 
-	/*
+	/**
 	 * Business method to deploy the Process Workflow
 	 * The activiti workflow is deployed to activiti DB using activiti API
 	 */
@@ -138,11 +137,9 @@ public class ActivitiLoadUpService
 		ActivitiLoadUpService loadService = new ActivitiLoadUpService();
 		try 
 		{
-			//ApplicationContext context = new ClassPathXmlApplicationContext("src/main/resources/spring-servlet.xml");
 			loadService.deployProcessFile();
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
