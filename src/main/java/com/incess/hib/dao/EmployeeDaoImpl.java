@@ -28,10 +28,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Employee> list() {
-		/*	Session session = this.sessionFactory.openSession();
-		List<Employee> personList = session.createQuery("from employee").list();
-		session.close();*/
-		return null ; // personList;
+		return null ;
 	}
 	
 	@Transactional
